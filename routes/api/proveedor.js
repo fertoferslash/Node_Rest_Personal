@@ -2,14 +2,14 @@
 const router = require('express').Router();
 
 //Require DBEmpresa
-const DBEmpresa = require('../../querys/sql_empresa');
+const DBProveedor = require('../../querys/sql_proveedor');
 
 //Define Route 
 router.get('/' , (req , res) => {
 
-    DBEmpresa.getEmpresa().then(results => {
-        console.log(`result ${JSON.stringify(results)}`); //convert to json 
-        res.send(results); //send json 
+    DBProveedor.getProveedor.then(results => {
+        console.log(`result ${JSON.stringify(results)}`);
+        res.send(results);
     })
 
     .catch(function(err){

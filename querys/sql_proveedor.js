@@ -3,13 +3,13 @@ const dbconnection = require('../db/db');
 
 
 //Define Query DB 
-let getEmpresa = () => {
+let getProveedor = () => {
 
         //Promise
         return new Promise ((resolve , reject) => {
 
             //Define Query 
-            let sql = 'SELECT * from empresa' 
+            let sql = 'SELECT * from proveedor' 
             
             //Execute Query 
             dbconnection.query(sql , (err,results) => {
@@ -30,5 +30,5 @@ let getEmpresa = () => {
 
 //Export 
 module.exports = {
-    getEmpresa
+    getProveedor
 };

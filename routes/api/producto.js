@@ -2,14 +2,14 @@
 const router = require('express').Router();
 
 //Require DBEmpresa
-const DBEmpresa = require('../../querys/sql_empresa');
+const DBProducto = require('../../querys/sql_producto');
 
 //Define Route 
 router.get('/' , (req , res) => {
 
-    DBEmpresa.getEmpresa().then(results => {
-        console.log(`result ${JSON.stringify(results)}`); //convert to json 
-        res.send(results); //send json 
+    DBProducto.getProducto().then(results => {
+        console.log(`result ${JSON.stringify(results)}`);
+        res.send(results);
     })
 
     .catch(function(err){
@@ -20,5 +20,4 @@ router.get('/' , (req , res) => {
 
 //Export 
 module.exports = router;
-
 

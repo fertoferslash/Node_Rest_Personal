@@ -4,11 +4,11 @@
 
 
 //Require Module MySql 
-var mysql = require('mysql');
+const mysql = require('mysql');
 
 
 //Define Data Connection DB 
-var dbconnection = mysql.createConnection({
+const dbconnection = mysql.createConnection({
   host: "localhost",
   user: "root",
   password: "",
@@ -20,16 +20,16 @@ var dbconnection = mysql.createConnection({
 dbconnection.connect(function(err){
 
     if(err){
-      console.log(`error connecting ${err.stack}`);
+      console.log(`Connection Failed ${err.stack}`);
       return;
     }
 
-    console.log(`connected as id ${dbconnection.threadId}`);
+    console.log(`Connection Successful - IdConnect Is : ${dbconnection.threadId}`);
 
 });
 
 
 //Export 
-module.exports = dbconnection;
+module.exports = dbconnection
 
 
